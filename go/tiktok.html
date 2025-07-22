@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vensin -> Tiktok</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <meta property="author" content="Vensin">
+    <meta property="og:title" content="Vensin -> Tiktok">
+    <meta property="og:description" content="Developer nothing more">
+    <meta property="og:url" content="https://tiktok.com/@vxnsin" id="og-url">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/51481323?v=4">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vensin -> Tiktok">
+    <meta name="twitter:description" content="Developer nothing more">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/51481323?v=4">
+    <meta name="twitter:url" content="https://tiktok.com/@vxnsin" id="twitter-url">
+    <link rel="canonical" href="https://tiktok.com/@vxnsin">
+    <script>
+        function redirect() {
+            const redirectUrl = "https://tiktok.com/@vxnsin";
+            document.getElementById("og-url").setAttribute("content", redirectUrl);
+            document.getElementById("twitter-url").setAttribute("content", redirectUrl);
+            window.location.href = redirectUrl;
+            document.getElementById("message").innerHTML = 'Wenn du nicht automatisch weitergeleitet wirst.';
+            document.getElementById("back").style.display = 'none';
+            document.getElementById("manualRedirect").style.display = 'inline-block';
+            document.getElementById("manualRedirect").setAttribute("href", redirectUrl);
+        }
+        window.onload = redirect;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p id="message">Wenn du nicht automatisch weitergeleitet wirst, überprüfe bitte die URL.</p>
+        <a href="/" id="back" class="btn">Zurück zur Startseite</a>
+        <a id="manualRedirect" class="btn" style="display: none;">Klick hier</a>
+    </div>
+</body>
+</html>

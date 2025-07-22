@@ -1,0 +1,33 @@
+name: Update Experience on April 10th
+
+on:
+  schedule:
+    # Jeden 10. April um 00:00 Uhr UTC
+    - cron: '0 0 10 4 *'
+
+jobs:
+  update_experience:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Update JSON file
+      run: |
+        current_date=$(date -u +'%m-%d')
+        if [ "$current_date" == "04-10" ]; then
+          coding_experience=$(jq '.codingExperience += 1' ../../data.json)
+          tech_experience=$(jq '.techExperience += 1' ../../data.json)
+          echo "{\"codingExperience\":$coding_experience,\"techExperience\":$tech_experience}" > ../../data.json
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add data.json
+          git commit -m "Update experience on April 10th"
+          git push
+        fi

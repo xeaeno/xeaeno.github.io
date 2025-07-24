@@ -118,7 +118,7 @@ function removeBlur() {
 
 async function fetchDiscordStatus() {
     try {
-        const response = await fetch(`https://api.lanyard.rest/v1/users/531896089096486922`);
+        const response = await fetch(`https://api.lanyard.rest/v1/users/1122921371903725770`);
         return await response.json();
     } catch (error) {
         console.error("Fehler beim Abrufen der Discord-Daten:", error);

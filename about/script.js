@@ -3,7 +3,7 @@ let previousData = null;
 
 $(document).ready(function () {
     updateStatus();
-    consoleText(['Vensin', 'About Me'], 'text', ['white', 'white']);
+    consoleText(['Luca', 'About Me'], 'text', ['white', 'white']);
 
     const muteButton = $("#muteButton");
     const audio = $("#myAudio")[0];
